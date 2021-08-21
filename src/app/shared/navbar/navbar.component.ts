@@ -13,9 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {}
 
   irUsuario(id: string) {
-    console.log('usuarios id ', id);
     if (!id) return;
-    console.log('sige');
     this.router.navigate(['/usuario', id]);
   }
 }

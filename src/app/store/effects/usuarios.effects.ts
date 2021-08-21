@@ -18,12 +18,12 @@ export class UsuariosEffects {
 
       // es solo para ver como fluye la informacions}
       // se puede borrar
-      tap((data) => console.log('effect tap', data)),
+      // tap((data) => console.log('effect tap', data)),
       mergeMap(() =>
         this.usuarioService.getUsers().pipe(
           // es solo para ver como fluye la informacions}
           // se puede borrar
-          tap((data) => console.log('getusers effect', data)),
+          // tap((data) => console.log('getusers effect', data)),
           map(users => usuariosActions.cargarUsuariosSuccess({ usuarios: users })),
           catchError(err => of(usuariosActions.cargarUsuariosError({ payload: err }))
           )

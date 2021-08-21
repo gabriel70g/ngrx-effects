@@ -1,3 +1,4 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -24,13 +25,11 @@ export class UsuarioComponent implements OnInit, OnDestroy {
         this.usuario = user;
         this.loading = loading;
         this.error = error;
-        console.log(user);
       });
 
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log('id de usuario', id);
-
-    this.store.dispatch(cargarUsuario({ id }));
+   this.suscrptcion = this.route.params.subscribe(({ id }) => {
+      this.store.dispatch(cargarUsuario({ id }));
+    })
   }
 
   ngOnInit(): void {}
