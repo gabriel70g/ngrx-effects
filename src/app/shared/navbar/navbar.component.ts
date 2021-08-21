@@ -7,13 +7,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router : Router) {}
+  values = '';
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
   irUsuario(id: string) {
-    if (!id) return
-
-this.router.navigate(['/usuario', id])
+    console.log('usuarios id ', id);
+    if (!id) return;
+    console.log('sige');
+    this.router.navigate(['/usuario', id]);
   }
 }

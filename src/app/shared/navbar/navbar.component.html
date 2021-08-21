@@ -30,9 +30,10 @@
           type="search"
           placeholder="ID Usuario"
           aria-label="Search"
+          (keyup.enter)="irUsuario(txtInput.value)"
         />
         <button
-          (keyup.enter)="irUsuario(txtInput.value)"
+
           (click)="irUsuario(txtInput.value)"
           class="btn btn-outline-success"
         >
